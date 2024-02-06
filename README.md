@@ -2,7 +2,7 @@
 
 ![The Sounds of the City](images/readme-img.png)
 
-Welcome to 'The Sounds of the City', an immersive music mixer application that brings the diverse and vibrant sounds of urban life right to your fingertips. With an intuitive drag-and-drop interface, users can mix and match common city sounds, creating unique audio tracks that capture the essence of urban landscapes. Inspired by innovative platforms like Incredibox, our project uses HTML, CSS, and JavaScript to offer a dynamic experience where the rhythm and soul of the city come alive. Dive into an auditory exploration of city life and craft your own urban symphony."
+Welcome to 'The Sounds of the City', an immersive music mixer application that brings the diverse and vibrant sounds of urban life right to your fingertips. With an intuitive drag-and-drop interface, users can mix and match common city sounds, creating unique audio tracks that capture the essence of urban landscapes. Inspired by innovative platforms like Incredibox, our project uses HTML, CSS, and JavaScript to offer a dynamic experience where the rhythm and soul of the city come alive. Dive into an auditory exploration of city life and craft your own urban symphony.
 
 ## Installation
 
