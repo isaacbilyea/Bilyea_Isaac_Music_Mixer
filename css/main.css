@@ -1,0 +1,124 @@
+.hidden {
+    display: none;
+}
+
+@font-face {
+    font-family: "Felix Titling";
+    src:
+      local("Felix Titling"),
+      url("FelixTitling.otf") format("opentype"),
+      url("FelixTitling.woff") format("woff"),
+      url("FelixTitling.woff2") format("woff2");
+  }
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Felix Titling', serif;
+    color: white;
+    max-width: 1200px;
+    border: 5px solid #096773;
+}
+
+/* HEADER */
+
+header {
+    background: #096773;
+    height: 125px;
+    display: flex;
+}
+
+h1 {
+    margin: 0 auto;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MAIN CONTENT */
+
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.left-content {
+    display: flex;
+    flex-direction: column;
+}
+
+/* City Backdrop */
+
+.background {
+    width: 862px;
+    height: 345px;
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    border-radius: 10px;
+    margin-top: 40px;
+    margin-left: 75px;
+    border-radius: 10px;
+    border: 5px solid #096773;
+    box-sizing: border-box;
+}
+
+/* Drag-n-Drop Images */
+
+.images {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 75px;
+}
+
+.images object {
+    background-color: #5DC5D2;
+    border-radius: 10px;
+    border: 5px solid #096773;
+    width: 107px;
+    height: 107px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Music Mixer Controller */
+
+.controller {
+    background-color: #5DC5D2;
+    border-radius: 10px;
+    border: 5px solid #096773;
+    width: 172px;
+    height: 470px;
+    margin-right: 75px;
+    box-sizing: border-box;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.controller h2 {
+    font-size: 22px;
+}
+
+.controller h3 {
+    font-size: 12px;
+}
+
+.controller object {
+
+    width: 96px;
+    height: 197px;
+    margin-bottom: 50px;
+    margin-top: 40px;
+
+}
+
+/* FOOTER */
+
+footer {
+    background: #096773;
+    height: 125px;
+    margin-top: 75px;
+}
