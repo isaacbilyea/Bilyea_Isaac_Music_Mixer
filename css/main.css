@@ -5,9 +5,9 @@
 @font-face {
     font-family: "Felix Titling";
     src:
-      local("../fonts/FelixTitling.otf") format("opentype"),
-      local("../fonts/FelixTitling.woff") format("woff"),
-      local("../fonts/FelixTitling.woff2") format("woff2");
+      url("../fonts/FelixTitling.otf") format("opentype"),
+      url("../fonts/FelixTitling.woff") format("woff"),
+      url("../fonts/FelixTitling.woff2") format("woff2");
   }
 
 body {
