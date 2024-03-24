@@ -17,14 +17,16 @@
 
 <!-- MAIN CONTENT -->
 
-<div class="main-content">
-    <div class="left-content">
-    
+<div class="grid-con">
+
     <!-- City Backdrop -->
 
-        <div class="background">
+       
             <h2 class="hidden">Empty City Backdrop</h2>
-        </div>
+            <div class="background col-span-full m-col-span-full l-col-start-1 l-col-end-11">
+            <img id="background" src="images/background.jpg" alt="Empty City Backdrop">
+            </div>
+ 
 
     <!-- Audio -->
 
@@ -38,10 +40,10 @@
 
     <!-- Drag-n-Drop Images -->
 
-    <section class="images">
 
         <h2 class="hidden">Drag-n-Drop Images</h2>
 
+        <div class="images col-span-full m-col-span-full l-col-start-1 l-col-end-11">
 
         <div class="image-con" id="con-1">
             <img id="person" src="images/person.svg" alt="Person" data-trackref="people" draggable="true" data-x="60" data-y="237">
@@ -65,16 +67,16 @@
             <img id="construction_worker" src="images/construction_worker.svg" alt="Construction Worker" data-trackref="construction" draggable="true" data-x="765" data-y="237">
         </div>
 
-    </section>
     </div>
 
     <!-- Music Mixer Controller -->
 
-    <section class="controller">
+    <section class="controller col-span-full m-col-span-full l-col-start-11 l-col-end-13">
 
         <h2>Music<br> Mixer</h2>
   
-
+    
+    <div id="controls-wrapper">
     <div id="controller-con">
         <img class="controls" id="playButton" src="images/play.svg" alt="Play Button">
         <img class="controls" id="pauseButton" src="images/pause.svg" alt="Pause Button"> 
@@ -85,16 +87,14 @@
     <div id="slider-con">
         <input id="slider" type="range" min="0" max="100" step="1"> 
     </div>
-        
-
-    <div id="controller-tex-con">
-        <h3>Instructions</h3>
-        <h3>Information</h3>
     </div>
 
-    </section>
+    <h3>Isaac<br> Bilyea</h3>
+        
 
+    </section>
 </div>
+
 
 <!-- FOOTER -->
 

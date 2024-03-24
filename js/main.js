@@ -34,8 +34,6 @@ function loadAudio(trackRef) {
         availableAudio.src = `audio/${trackRef}.mp3`;
         availableAudio.load();
         availableAudio.play();
-    } else {
-        console.log('No available audio players.');
     }
 }
 
