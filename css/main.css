@@ -10,7 +10,6 @@
       url("../fonts/FelixTitling.woff2") format("woff2");
   }
 
-  
 body {
     margin: 0 auto;
     padding: 0;
@@ -43,6 +42,8 @@ h1 {
     grid-row-start: 2;
     grid-row-end: 3;
     margin: 0px 5px;
+    position: relative;
+    z-index: 1;
 }
 
 #background {
@@ -51,42 +52,68 @@ h1 {
     width: 100%;
     border: 5px solid #096773;
     position: relative;
+    z-index: 1;
+}
+
+.drop-zone {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+
 }
 
 /* Styling for Dropped Images */
 
-.background img {
+.drop-zone img {
     width: auto;
     height: auto;
     position: absolute;
+    z-index: 2;
 }
 
-.background #person {
-    height: 60px;
+.drop-zone #people {
+    height: 10%;
+    left: 9%;
+    top: 72%;
 }
 
-.background #plane {
-    height: 60px;
+.drop-zone #plane {
+    height: 10%;
+    left: 30%;
+    top: 15%;
 }
 
-.background #ambulance {
-    height: 80px;
+.drop-zone #ambulance {
+    height: 15%;
+    left: 30%;
+    top: 74%;
 }
 
-.background #car {
-    height: 55px;
+.drop-zone #car {
+    height: 10%;
+    left: 60%;
+    top: 79%;
 }
 
-.background #rain {
-    height: 70px;
+.drop-zone #rain {
+    height: 15%;
+    left: 78%;
+    top: 12%;
 }
 
-.background #bird {
-    height: 30px;
+.drop-zone #bird {
+    height: 5%;
+    left: 43.5%;
+    top: 21%;
 }
 
-.background #construction_worker {
-    height: 60px;
+.drop-zone #construction {
+    height: 10%;
+    left: 90%;
+    top: 73%;
 }
 
 /* Drag-n-Drop Images */
@@ -116,6 +143,12 @@ h1 {
     box-sizing: border-box;
     display: inline-flex;
     margin-bottom: 10px;
+}
+
+.image-con:hover {
+    border: 6px solid #5DC5D2;
+    background-color: #096773;
+    transition: ease-in-out .1s;
 }
 
 /* Music Mixer Controller */
@@ -155,6 +188,10 @@ h1 {
     margin-left: 2px;
     margin-right: 0px;
     margin-top: 4px;
+}
+
+.controller img:hover {
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
 }
 
 #controls-wrapper {
@@ -199,11 +236,12 @@ footer {
 @media screen and (min-width: 500px) { 
 
     .controller h3 {
-    display: block;
-    font-size: 14px;
-    margin-left: 5px;
+        display: block;
+        font-size: 14px;
+        margin-left: 5px;
     }
 }
+
 /* Tablet Styling */
 
 @media screen and (min-width: 768px) { 
@@ -216,7 +254,41 @@ footer {
         margin: 0px 10px;
     }
 
+    .drop-zone #people {
+        left: 8.5%;
+        top: 74%;
+    }
     
+    .drop-zone #plane {
+        left: 30%;
+        top: 15%;
+    }
+    
+    .drop-zone #ambulance {
+        left: 30%;
+        top: 76%;
+    }
+    
+    .drop-zone #car {
+        left: 60%;
+        top: 81%;
+    }
+    
+    .drop-zone #rain {
+        left: 80%;
+        top: 10%;
+    }
+    
+    .drop-zone #bird {
+        left: 43.5%;
+        top: 20.5%;
+    }
+    
+    .drop-zone #construction {
+        left: 90%;
+        top: 75%;
+    }
+
     .images {
         margin: 15px 10px;
     }
@@ -293,32 +365,40 @@ footer {
         margin-bottom: 15px;
     }
 
-    .background #person {
-        height: 60px;
+    .drop-zone #people {
+        left: 8%;
+        top: 73%;
     }
     
-    .background #plane {
-        height: 60px;
+    .drop-zone #plane {
+        left: 30%;
+        top: 20%;
     }
     
-    .background #ambulance {
-        height: 80px;
+    .drop-zone #ambulance {
+        left: 30%;
+        top: 74%;
     }
     
-    .background #car {
-        height: 55px;
+    .drop-zone #car {
+        left: 60%;
+        top: 79%;
     }
     
-    .background #rain {
-        height: 70px;
+    .drop-zone #rain {
+        left: 80%;
+        top: 15%;
     }
     
-    .background #bird {
-        height: 30px;
+    .drop-zone #bird {
+        left: 43.5%;
+        top: 26.5%;
     }
     
-    .background #construction_worker {
-        height: 60px;
+    .drop-zone #construction {
+        left: 90%;
+        top: 73%;
+
     }
 
     .images {

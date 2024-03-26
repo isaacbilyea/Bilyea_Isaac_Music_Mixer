@@ -1,124 +1,121 @@
 (() => {
 
 //VARIABLES
-
-const theAudio = document.querySelectorAll('.audio-player'),
+    
+let theAudio = document.querySelectorAll('.audio-player'),
     playButton = document.querySelector('#playButton'),
     pauseButton = document.querySelector('#pauseButton'),
-    replayButton = document.querySelector('#replayButton'),
+    resetButton = document.querySelector('#resetButton'),
     shuffleButton = document.querySelector('#shuffleButton'),
     volumeSlider = document.querySelector('#slider'),
     audioImages = document.querySelectorAll ('.images img'),
-    dropZone = document.querySelectorAll('.background');
-
-    const originalContainers = {};
-
+    dropZone = document.querySelector('.drop-zone');
+    
 //FUNCTIONS
-
+    
 //Audio Functions
-
+    
 function loadAudio(trackRef) {
-    let availableAudio = null;
-
-    theAudio.forEach(audio => {
-        if (!availableAudio && (audio.paused)) {
-            availableAudio = audio;
-        }
-    });
-
-    if (availableAudio) {
-     
-        availableAudio.volume = volumeSlider.value / 100;
-
-        
-        availableAudio.src = `audio/${trackRef}.mp3`;
-        availableAudio.load();
-        availableAudio.play();
-    }
+    const audio = document.querySelector(`audio[data-trackref="${trackRef}"]`);
+    
+    audio.volume = volumeSlider.value / 100;
+    audio.src = `audio/${trackRef}.mp3`;
+    audio.play();
 }
 
 function playAudio() {
-    theAudio.forEach(audio => {
-        audio.play();
+
+    const droppedImages = dropZone.querySelectorAll('img[data-trackref]');
+    
+    droppedImages.forEach(img => {
+        const trackRef = img.getAttribute('data-trackref');
+        loadAudio(trackRef);
     });
 }
 
 function pauseAudio() {
+
     theAudio.forEach(audio => {
         audio.pause();
     });
 }
-
+    
 function setVolume() {
-
+        
     theAudio.forEach(audio => {
         audio.volume = this.value / 100;
     });
 }
-
-function restartAudio() {
-
+    
+function resetPieces() {
+    
     theAudio.forEach(audio => {
         audio.pause();
         audio.currentTime = 0;
     });
-
+    
     resetImages();
 }
 
-//Drag n' Drop Stuff
 
+//Drag n' Drop Shtuff
+    
 function handleStartDrag(e) {
-    originalContainers[e.target.id] = e.target.parentElement.id;
-    e.dataTransfer.setData('text/plain', e.target.id);
+    const trackRef = e.target.getAttribute('data-trackref');
+    e.dataTransfer.setData('text/plain', trackRef); 
 }
-
+    
 function handleDragOver(e) { 
-	e.preventDefault();
+    e.preventDefault();
 }
-
+    
 function handleDrop(e) {
     e.preventDefault();
-    const data = e.dataTransfer.getData('text/plain');
-    const draggedElement = document.getElementById(data);
-
-    const posX = draggedElement.getAttribute('data-x');
-    const posY = draggedElement.getAttribute('data-y');
-
-    draggedElement.style.left = `${posX}` + 'px';
-    draggedElement.style.top = `${posY}` + 'px';
-
-    e.target.appendChild(draggedElement);
-
+      
+    const trackRef = e.dataTransfer.getData('text/plain');
+    const draggedImage = document.querySelector(`img[data-trackref="${trackRef}"]`);
     
-    const trackRef = draggedElement.getAttribute('data-trackref');
+    dropZone.appendChild(draggedImage);
     loadAudio(trackRef);
- 
 }
 
 function resetImages() {
-    Object.entries(originalContainers).forEach(([imageId, originalContainerId]) => {
-        const image = document.getElementById(imageId);
-        const originalContainer = document.getElementById(originalContainerId);
-        if (image && originalContainer) {
-            originalContainer.appendChild(image);
-        }
+    audioImages.forEach(image => {
+        
+        const trackRef = image.getAttribute('data-trackref');
+        const originalContainer = document.querySelector(`.image-con[data-trackref="${trackRef}"]`);
+    
+        originalContainer.appendChild(image);
+          
+    });
+}
+
+//This is my poor mans "Shuffle" button since Math SUCKS
+function appendImages() {
+    audioImages.forEach(image => {
+         
+        dropZone.appendChild(image);
+            
+        const trackRef = image.getAttribute('data-trackref');
+        loadAudio(trackRef);
+
     });
 }
 
 //EVENT LISTENERS
-
+    
 // 1 to 1 event handling
-
+    
 playButton.addEventListener('click', playAudio);
 pauseButton.addEventListener('click', pauseAudio);
 volumeSlider.addEventListener('input', setVolume);
-replayButton.addEventListener('click', restartAudio);
-
+resetButton.addEventListener('click', resetPieces);
+dropZone.addEventListener('dragover', handleDragOver);
+dropZone.addEventListener('drop', handleDrop);
+shuffleButton.addEventListener('click', appendImages);
+    
 // 1 to many event handling
-
-audioImages.forEach(piece => piece.addEventListener("dragstart", handleStartDrag));
-dropZone.forEach(zone => zone.addEventListener("dragover", handleDragOver));
-dropZone.forEach(zone => zone.addEventListener("drop", handleDrop));
-
+    
+audioImages.forEach(image => image.addEventListener('dragstart', handleStartDrag));
+    
 })();

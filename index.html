@@ -25,18 +25,19 @@
             <h2 class="hidden">Empty City Backdrop</h2>
             <div class="background col-span-full m-col-span-full l-col-start-1 l-col-end-11">
             <img id="background" src="images/background.jpg" alt="Empty City Backdrop">
+            <div class="drop-zone"></div>
             </div>
  
 
     <!-- Audio -->
 
-    <audio id="audio1" class="audio-player" loop></audio>
-    <audio id="audio2" class="audio-player" loop></audio>
-    <audio id="audio3" class="audio-player" loop></audio>
-    <audio id="audio4" class="audio-player" loop></audio>
-    <audio id="audio5" class="audio-player" loop></audio>
-    <audio id="audio6" class="audio-player" loop></audio>
-    <audio id="audio7" class="audio-player" loop></audio>
+    <audio id="audio1" class="audio-player" data-trackref="people" loop></audio>
+    <audio id="audio2" class="audio-player" data-trackref="plane" loop></audio>
+    <audio id="audio3" class="audio-player" data-trackref="ambulance" loop></audio>
+    <audio id="audio4" class="audio-player" data-trackref="car" loop></audio>
+    <audio id="audio5" class="audio-player" data-trackref="rain" loop></audio>
+    <audio id="audio6" class="audio-player" data-trackref="bird" loop></audio>
+    <audio id="audio7" class="audio-player" data-trackref="construction" loop></audio>
 
     <!-- Drag-n-Drop Images -->
 
@@ -45,26 +46,26 @@
 
         <div class="images col-span-full m-col-span-full l-col-start-1 l-col-end-11">
 
-        <div class="image-con" id="con-1">
-            <img id="person" src="images/person.svg" alt="Person" data-trackref="people" draggable="true" data-x="60" data-y="237">
+        <div class="image-con" id="con-1" data-trackref="people">
+            <img id="people" src="images/person.svg" alt="Person" data-trackref="people" draggable="true">
         </div>
-        <div class="image-con" id="con-2">
-            <img id="plane" src="images/plane.svg" alt="Plane" data-trackref="plane" draggable="true" data-x="250" data-y="20">
+        <div class="image-con" id="con-2" data-trackref="plane">
+            <img id="plane" src="images/plane.svg" alt="Plane" data-trackref="plane" draggable="true">
         </div>
-        <div class="image-con" id="con-3">
-            <img id="ambulance" src="images/ambulance.svg" alt="Ambulance" data-trackref="ambulance" draggable="true" data-x="200" data-y="240">
+        <div class="image-con" id="con-3" data-trackref="ambulance">
+            <img id="ambulance" src="images/ambulance.svg" alt="Ambulance" data-trackref="ambulance" draggable="true">
         </div>
-        <div class="image-con" id="con-4">
-            <img id="car" src="images/car.svg" alt="Car" data-trackref="cars" draggable="true" data-x="600" data-y="265">
+        <div class="image-con" id="con-4" data-trackref="car">
+            <img id="car" src="images/car.svg" alt="Car" data-trackref="car" draggable="true">
         </div>
-        <div class="image-con" id="con-5">
-            <img id="rain" src="images/rain.svg" alt="Rain" data-trackref="rain" draggable="true" data-x="690" data-y="10">
+        <div class="image-con" id="con-5" data-trackref="rain">
+            <img id="rain" src="images/rain.svg" alt="Rain" data-trackref="rain" draggable="true">
         </div>
-        <div class="image-con" id="con-6">
-            <img id="bird" src="images/bird.svg" alt="Bird" data-trackref="birds" draggable="true" data-x="210" data-y="95">
+        <div class="image-con" id="con-6" data-trackref="bird">
+            <img id="bird" src="images/bird.svg" alt="Bird" data-trackref="bird" draggable="true">
         </div>
-        <div class="image-con" id="con-7">
-            <img id="construction_worker" src="images/construction_worker.svg" alt="Construction Worker" data-trackref="construction" draggable="true" data-x="765" data-y="237">
+        <div class="image-con" id="con-7" data-trackref="construction">
+            <img id="construction" src="images/construction_worker.svg" alt="Construction Worker" data-trackref="construction" draggable="true">
         </div>
 
     </div>
@@ -81,7 +82,7 @@
         <img class="controls" id="playButton" src="images/play.svg" alt="Play Button">
         <img class="controls" id="pauseButton" src="images/pause.svg" alt="Pause Button"> 
         <img class="controls" id="shuffleButton" src="images/shuffle.svg" alt="Shuffle Button"> 
-        <img class="controls" id="replayButton" src="images/replay.svg" alt="Replay Button">
+        <img class="controls" id="resetButton" src="images/reset.svg" alt="Replay Button">
     </div>
 
     <div id="slider-con">
