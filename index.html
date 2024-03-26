@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sounds of the City</title>
     <link href="css/main.css" rel="stylesheet">       
+    <link href="css/grid.css" rel="stylesheet">  
 </head>
 <body>
 
@@ -16,47 +17,84 @@
 
 <!-- MAIN CONTENT -->
 
-<div class="main-content">
-    <div class="left-content">
-    
-    <!-- City Backdrop -->
+<div class="grid-con">
 
-        <div class="background">
-            <h2 class="hidden">Empty City Backdrop</h2>
+    <!-- City Backdrop -->
+       
+        <h2 class="hidden">Empty City Backdrop</h2>
+
+        <div class="background col-span-full m-col-span-full l-col-start-1 l-col-end-11">
+            <img id="background" src="images/background.jpg" alt="Empty City Backdrop">
+            <div class="drop-zone"></div>
         </div>
+ 
+
+    <!-- Audio -->
+
+    <audio id="audio1" class="audio-player" data-trackref="people" loop></audio>
+    <audio id="audio2" class="audio-player" data-trackref="plane" loop></audio>
+    <audio id="audio3" class="audio-player" data-trackref="ambulance" loop></audio>
+    <audio id="audio4" class="audio-player" data-trackref="car" loop></audio>
+    <audio id="audio5" class="audio-player" data-trackref="rain" loop></audio>
+    <audio id="audio6" class="audio-player" data-trackref="bird" loop></audio>
+    <audio id="audio7" class="audio-player" data-trackref="construction" loop></audio>
 
     <!-- Drag-n-Drop Images -->
 
-        <section class="images">
 
-            <h2 class="hidden">Drag-n-Drop Images</h2>
+    <h2 class="hidden">Drag-n-Drop Images</h2>
 
-            <img id="person" src="images/person.svg" alt="Person">
-            <img id="plane" src="images/plane.svg" alt="Plane">
-            <img id="ambulance" src="images/ambulance.svg" alt="Ambulance">
-            <img id="car" src="images/car.svg" alt="Car">
-            <img id="rain" src="images/rain.svg" alt="Rain">
-            <img id="bird" src="images/bird.svg" alt="Bird">
-            <img id="construction_worker" src="images/construction_worker.svg" alt="Construction Worker">
+    <div class="images col-span-full m-col-span-full l-col-start-1 l-col-end-11">
 
-        </section>
+        <div class="image-con" id="con-1" data-trackref="people">
+            <img id="people" src="images/person.svg" alt="Person" data-trackref="people" draggable="true">
+        </div>
+        <div class="image-con" id="con-2" data-trackref="plane">
+            <img id="plane" src="images/plane.svg" alt="Plane" data-trackref="plane" draggable="true">
+        </div>
+        <div class="image-con" id="con-3" data-trackref="ambulance">
+            <img id="ambulance" src="images/ambulance.svg" alt="Ambulance" data-trackref="ambulance" draggable="true">
+        </div>
+        <div class="image-con" id="con-4" data-trackref="car">
+            <img id="car" src="images/car.svg" alt="Car" data-trackref="car" draggable="true">
+        </div>
+        <div class="image-con" id="con-5" data-trackref="rain">
+            <img id="rain" src="images/rain.svg" alt="Rain" data-trackref="rain" draggable="true">
+        </div>
+        <div class="image-con" id="con-6" data-trackref="bird">
+            <img id="bird" src="images/bird.svg" alt="Bird" data-trackref="bird" draggable="true">
+        </div>
+        <div class="image-con" id="con-7" data-trackref="construction">
+            <img id="construction" src="images/construction_worker.svg" alt="Construction Worker" data-trackref="construction" draggable="true">
+        </div>
+
     </div>
 
     <!-- Music Mixer Controller -->
 
-    <section class="controller">
+    <section class="controller col-span-full m-col-span-full l-col-start-11 l-col-end-13">
 
-        <h2>Music<br> Mixer</h2>
+    <h2>Music<br> Mixer</h2>
   
-        <!--Using this as a placeholder for now-->
-        <img id="controls" src="images/controls.svg" alt="Controls"> 
+    
+    <div id="controls-wrapper">
+    <div id="controller-con">
+        <img class="controls" id="playButton" src="images/play.svg" alt="Play Button">
+        <img class="controls" id="pauseButton" src="images/pause.svg" alt="Pause Button"> 
+        <img class="controls" id="shuffleButton" src="images/shuffle.svg" alt="Shuffle Button"> 
+        <img class="controls" id="resetButton" src="images/reset.svg" alt="Replay Button">
+    </div>
 
-        <h3>Instructions</h3>
-        <h3>Information</h3>
+    <div id="slider-con">
+        <input id="slider" type="range" min="0" max="100" step="1"> 
+    </div>
+    </div>
 
+    <h3>Isaac<br> Bilyea</h3>
+        
     </section>
-
 </div>
+
 
 <!-- FOOTER -->
 
