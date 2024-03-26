@@ -23,9 +23,6 @@ Open index.html in the browser of your choice.
 ## History
 
 February 6th 2024
-March 7th 2024
-March 21st 2024
-March 24th 2024
 
 ## Credits
 
